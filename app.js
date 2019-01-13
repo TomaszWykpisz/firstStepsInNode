@@ -24,33 +24,44 @@
 ////
 // File System
 
-const fs = require('fs');
+// const fs = require('fs');
 
-// Create and add/replace new file
-fs.appendFile('./files/fileSystem/createByappendFile.txt', "Hello I'm appendingFile", (err)=>{
-	if (err) throw err;
-	console.log('Created by appendFile()');
-});
+// // Create and add/replace new file
+// fs.appendFile('./files/fileSystem/createByappendFile.txt', "Hello I'm appendingFile", (err)=>{
+// 	if (err) throw err;
+// 	console.log('Created by appendFile()');
+// });
 
-fs.writeFile('./files/fileSystem/createBywriteFile.txt', "Hello I'm writingFle", (err)=>{
-	if (err) throw err;
-	console.log('Created by writeFile()');
-});
+// fs.writeFile('./files/fileSystem/createBywriteFile.txt', "Hello I'm writingFle", (err)=>{
+// 	if (err) throw err;
+// 	console.log('Created by writeFile()');
+// });
 
-//Create empty file
-fs.open('./files/fileSystem/createByopen.txt', 'w', (err, file) => {
-	if (err) throw err;
-	console.log('Created by open()');
-});
+// //Create empty file
+// fs.open('./files/fileSystem/createByopen.txt', 'w', (err, file) => {
+// 	if (err) throw err;
+// 	console.log('Created by open()');
+// });
 
-// Delete file
-fs.unlink('./files/fileSystem/createByopen.txt', (err) =>{
-	if(err) throw err;
-	console.log('File deleted');
-});
+// // Delete file
+// fs.unlink('./files/fileSystem/createByopen.txt', (err) =>{
+// 	if(err) throw err;
+// 	console.log('File deleted');
+// });
 
-fs.rename('./files/fileSystem/createBywriteFile.txt', './files/fileSystem/createwriteFile.txt', (err) => {
-	if(err) throw err;
-	console.log('File renamed');
-});
+// fs.rename('./files/fileSystem/createBywriteFile.txt', './files/fileSystem/createwriteFile.txt', (err) => {
+// 	if(err) throw err;
+// 	console.log('File renamed');
+// });
+
+////
+// URL Module
+
+const url = require('url');
+
+var adr = 'http://localhost:8080/default.htm?year=2017&month=february';
+var q = url.parse(adr, true);
+
+console.log(q);
+
 ////
