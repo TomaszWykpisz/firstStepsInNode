@@ -57,11 +57,44 @@
 ////
 // URL Module
 
-const url = require('url');
+// const url = require('url');
 
-var adr = 'http://localhost:8080/default.htm?year=2017&month=february';
-var q = url.parse(adr, true);
+// var adr = 'http://localhost:8080/default.htm?year=2017&month=february';
+// var q = url.parse(adr, true);
 
-console.log(q);
+// console.log(q);
+
+////
+// MySQL Module
+// npm install --save mysql
+
+const mysql = require('mysql');
+
+var con = mysql.createConnection({
+	host: "localhost",
+	user: "root",
+	password: "root",
+	database: "mydb"
+});
+
+con.connect((err) => {
+	if(err) throw err;
+	console.log("Connected");
+	// var sql = "INSERT INTO customers (firstName, lastName) VALUES ?";
+	// var values = [
+	//     ['John', 'Richard'],
+	// 	['Peter', 'Wood'],
+	// ];
+	// con.query(sql, [values], function (err, result) {
+	// 	if (err) throw err;
+	// 	console.log("Number of records inserted: " + result.affectedRows);
+	// });
+
+	var sql = "SELECT * FROM customers";
+	con.query(sql , function (err, result, fields) {
+		if (err) throw err;
+		console.log(result);
+	});
+});
 
 ////
