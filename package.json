@@ -1,0 +1,11 @@
+{
+  "name": "firststepinnode",
+  "version": "1.0.0",
+  "description": "First step in Node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tomasz Wykpisz",
+  "license": "ISC"
+}
